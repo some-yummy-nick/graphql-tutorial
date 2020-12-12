@@ -2,10 +2,13 @@ const express = require('express');
 const {graphqlHTTP} = require('express-graphql');
 const schema = require('./schema/schema.js');
 const mongoose = require('mongoose');
+const cors= require("cors");
 
-const {MONGODB} = require("../config");
+const {MONGODB} = require("./config");
 
 const app = express();
+
+app.use(cors());
 
 app.use('/graphql', graphqlHTTP({
     schema,
