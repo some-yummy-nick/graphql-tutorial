@@ -1,14 +1,17 @@
-import { compose } from 'recompose';
-import { graphql } from 'react-apollo';
+import {compose} from 'recompose';
+import {graphql} from 'react-apollo';
 
-import { deleteDirectorMutation } from './mutations';
-import { directorsQuery } from '../DirectorsTable/queries';
+import {deleteDirectorMutation} from './mutations';
+import {directorsQuery} from '../DirectorsTable/queries';
 
 const withGraphqlDelete = graphql(deleteDirectorMutation, {
-    props: ({ mutate }) => ({
+    props: ({mutate}) => ({
         deleteDirector: id => mutate({
             variables: id,
-            refetchQueries: [{ query: directorsQuery }],
+            refetchQueries: [{
+                query: directorsQuery,
+                variables: {name: ''},
+            }],
         }),
     }),
 });

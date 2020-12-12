@@ -3,9 +3,8 @@ export const styles = theme => ({
         position: 'relative',
         minHeight: 'calc(100vh - 24px * 2 - 72px)',
     },
-    fab: {
-        position: 'absolute',
-        bottom: 0,
-        right: 0,
+    fabWrapper: {
+        paddingTop: theme.spacing(2),
+        textAlign: "right"
     },
 });

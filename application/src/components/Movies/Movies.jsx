@@ -58,6 +58,8 @@ class Movies extends React.Component {
                             onClose={this.handleClose}/>
                 <div className={classes.wrapper}>
                     <MoviesTable onOpen={this.handleClickOpen} onClose={this.handleClose}/>
+                </div>
+                <div className={classes.fabWrapper}>
                     <Fab onClick={() => this.handleClickOpen()} color="primary" aria-label="Add"
                          className={classes.fab}>
                         <AddIcon/>
